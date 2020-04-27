@@ -37,6 +37,11 @@ grpc_cc_binary(
     name = "fling_server",
     testonly = 1,
     srcs = ["server.cc"],
+    data = [
+        "//src/core/tsi/test_creds:ca.pem",
+        "//src/core/tsi/test_creds:server1.key",
+        "//src/core/tsi/test_creds:server1.pem",
+    ],
     language = "C++",
     deps = [
         "//:gpr",
